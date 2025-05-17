@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,32 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// New recruitment platform colors
+				brand: {
+					50: '#e6f8ff',
+					100: '#b3e7ff',
+					200: '#80d6ff',
+					300: '#4dc6ff',
+					400: '#1ab5ff',
+					500: '#00a3e6',
+					600: '#0082b3',
+					700: '#006180',
+					800: '#00404d',
+					900: '#00202a',
+				},
+				accent1: {
+					50: '#e6fff9',
+					100: '#b3ffeb',
+					200: '#80ffde',
+					300: '#4dffd0',
+					400: '#1affc2',
+					500: '#00e6a8',
+					600: '#00b384',
+					700: '#008060',
+					800: '#004d3c',
+					900: '#002a21',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,13 +110,41 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					from: {
+						opacity: '0'
+					},
+					to: {
+						opacity: '1'
+					}
+				},
+				'slide-from-right': {
+					from: {
+						transform: 'translateX(100%)'
+					},
+					to: {
+						transform: 'translateX(0)'
+					}
+				},
+				'slide-to-right': {
+					from: {
+						transform: 'translateX(0)'
+					},
+					to: {
+						transform: 'translateX(100%)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'slide-from-right': 'slide-from-right 0.3s ease-out',
+				'slide-to-right': 'slide-to-right 0.3s ease-out'
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
