@@ -57,8 +57,7 @@ Video and audio evaluation using OpenCV FER and Wav2Vec2
 
 ### 1 Clone the Repository
 
-git clone https://github.com/rahulgupta1125/job-recruitment-platform.git  
-cd job-recruitment-platform
+git clone https://github.com/rahulgupta1125/ai-recruit-smart.git
 
 ### 2 Environment Variables
 
