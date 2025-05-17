@@ -15,6 +15,8 @@ import Register from "./pages/Register";
 import JobSeekerDashboard from "./pages/job-seeker/Dashboard";
 import EmployerDashboard from "./pages/employer/Dashboard";
 import ResumeAnalyzer from "./pages/job-seeker/ResumeAnalyzer";
+import InterviewQuestionGenerator from "./pages/job-seeker/InterviewQuestionGenerator";
+import JobDescriptionOptimizer from "./pages/employer/JobDescriptionOptimizer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,8 +49,16 @@ const App = () => (
                 <Route 
                   path="/job-seeker/resume-analyzer" 
                   element={
-                    <ProtectedRoute allowedRoles={["job_seeker"]}>
+                    <ProtectedRoute allowedRoles={["job_seeker", "employer"]}>
                       <ResumeAnalyzer />
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route 
+                  path="/job-seeker/interview-questions" 
+                  element={
+                    <ProtectedRoute allowedRoles={["job_seeker"]}>
+                      <InterviewQuestionGenerator />
                     </ProtectedRoute>
                   } 
                 />
@@ -59,6 +69,14 @@ const App = () => (
                   element={
                     <ProtectedRoute allowedRoles={["employer"]}>
                       <EmployerDashboard />
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route 
+                  path="/employer/job-description-optimizer" 
+                  element={
+                    <ProtectedRoute allowedRoles={["employer"]}>
+                      <JobDescriptionOptimizer />
                     </ProtectedRoute>
                   } 
                 />
