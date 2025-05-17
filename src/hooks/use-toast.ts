@@ -179,4 +179,9 @@ function useToast() {
   }
 }
 
-export { useToast, toast }
+// Export both the hook and the toast function to make them accessible
+export { useToast }
+export const toast = (props: Omit<ToasterToast, "id">) => {
+  const { toast: toastFunction } = useToast();
+  return toastFunction(props);
+}
