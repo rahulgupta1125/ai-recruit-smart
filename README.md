@@ -1,73 +1,120 @@
-# Welcome to your Lovable project
+# AI-Powered Job Recruitment Platform
 
-## Project info
+A mobile-first full-stack web platform that connects job seekers and employers using AI-powered tools for resume analysis job matching and interview evaluation.
 
-**URL**: https://lovable.dev/projects/eb987608-3734-4f6f-9c31-c507980ef0c5
+## Features
 
-## How can I edit this code?
+Mobile-first responsive UI with Tailwind CSS  
+Secure JWT authentication with role-based access (Job Seeker and Employer)  
+AI Resume Analyzer Extracts and evaluates resume content for grammar ATS relevance and skills  
+Video Interview Evaluator Assesses tone confidence and clarity using AI (FER and Wav2Vec2)  
+AI-Based Job Matching Recommends jobs and highlights skill gaps using Sentence-BERT  
+Modular scalable architecture (React Redux Node.js Python microservices)  
+Cloud-ready deployment setup (Vercel Render Fly.io)
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+### Frontend
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/eb987608-3734-4f6f-9c31-c507980ef0c5) and start prompting.
+React.js and Tailwind CSS  
+Redux Toolkit for state management  
+React Router for page navigation  
+react-hook-form and yup for form validation
 
-Changes made via Lovable will be committed automatically to this repo.
+### Backend
 
-**Use your preferred IDE**
+Node.js and Express  
+JWT-based auth (access and refresh tokens)  
+PostgreSQL via Supabase
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### AI Microservices (Python - FastAPI)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Resume text parsing using pdfminer.six and python-docx  
+NLP models such as spaCy transformers Sentence-BERT  
+Video and audio evaluation using OpenCV FER and Wav2Vec2
 
-Follow these steps:
+## Folder Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+/frontend  
+  /components  
+  /pages  
+  /store  
+  App.js  
+  index.js  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+/backend  
+  /routes  
+  /controllers  
+  /middleware  
+  server.js  
 
-# Step 3: Install the necessary dependencies.
-npm i
+/ai-services  
+  resumeService.py  
+  matchEngine.py  
+  videoEvaluator.py
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Setup Instructions
 
-**Edit a file directly in GitHub**
+### 1 Clone the Repository
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+git clone https://github.com/your-username/job-recruitment-platform.git  
+cd job-recruitment-platform
 
-**Use GitHub Codespaces**
+### 2 Environment Variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Create a .env file in both /frontend and /backend with appropriate values
 
-## What technologies are used for this project?
+Example
 
-This project is built with:
+JWT_SECRET=your_jwt_secret  
+DATABASE_URL=your_database_url  
+STRIPE_SECRET_KEY=your_stripe_key
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 3 Install Dependencies
 
-## How can I deploy this project?
+Frontend  
+cd frontend  
+npm install  
 
-Simply open [Lovable](https://lovable.dev/projects/eb987608-3734-4f6f-9c31-c507980ef0c5) and click on Share -> Publish.
+Backend  
+cd ../backend  
+npm install  
 
-## Can I connect a custom domain to my Lovable project?
+AI Services (Python)  
+cd ../ai-services  
+pip install -r requirements.txt
 
-Yes, you can!
+### 4 Run Locally
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Frontend  
+npm start from /frontend  
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Backend  
+node server.js from /backend  
+
+AI Services  
+uvicorn resumeService:app --reload
+
+## Deployment
+
+Frontend Vercel  
+Backend Render or Railway  
+Python AI Services Fly.io or Docker
+
+## Roadmap / Future Enhancements
+
+AI-based interview question generator  
+Admin dashboard with analytics  
+Multi-language support  
+OAuth login integration Google or LinkedIn
+
+## License
+
+This project is licensed under the MIT License
+
+## Acknowledgements
+
+HuggingFace Transformers  
+OpenAI  
+Stripe  
+Supabase
