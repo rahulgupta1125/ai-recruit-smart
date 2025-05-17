@@ -34,7 +34,7 @@ const LandingPage: React.FC = () => {
                 </Button>
               </Link>
               <Link to="/job-seeker/resume-analyzer">
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/20">
+                <Button size="lg" className="bg-white text-brand-700 hover:bg-white/90">
                   Try Resume Analyzer
                 </Button>
               </Link>
@@ -148,7 +148,7 @@ const LandingPage: React.FC = () => {
                   </Button>
                 </Link>
                 <Link to="/register?role=employer">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 w-full sm:w-auto">
+                  <Button size="lg" className="bg-white text-brand-700 hover:bg-white/90 w-full sm:w-auto">
                     Employers Sign Up
                   </Button>
                 </Link>
